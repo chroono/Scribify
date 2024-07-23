@@ -11,7 +11,7 @@ import SwiftUI
 struct ScribifyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StudentsListView(vm: StudentsViewModel(surname: "", name: ""))
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Students {
+struct Students: Identifiable {
     let id = UUID()
     var username: String
     var name: String

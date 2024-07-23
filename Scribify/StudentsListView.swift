@@ -13,13 +13,12 @@ struct StudentsListView: View {
     @ObservedObject var vm: StudentsViewModel
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(students) { students in
+            Text(students.username)
+            
         }
-        .padding()
+        
+        
     }
 }
 
