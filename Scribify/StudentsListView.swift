@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  StudentsListView.swift
 //  Scribify
 //
 //  Created by Emil Piórkowski on 23/07/2024.
@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct StudentsListView: View {
+    
+    @State var student = students
+    @ObservedObject var vm: StudentsViewModel
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +24,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    StudentsListView(vm: StudentsViewModel(surname: "", name: ""))
 }
