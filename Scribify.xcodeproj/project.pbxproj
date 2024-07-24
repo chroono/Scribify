@@ -42,6 +42,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E19651542C512DFD00AE595D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E19651572C512E5F00AE595D /* CalendarView */,
+				E19651562C512E4200AE595D /* JournalView */,
+				E19651552C512E1500AE595D /* HomeView */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E19651552C512E1500AE595D /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC80D02C50448A006B3B61 /* StudentsList.swift */,
+				E1CC80CE2C50445A006B3B61 /* StudentsViewModel.swift */,
+				E1AAA0862C50073000B21CE4 /* StudentsListView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		E19651562C512E4200AE595D /* JournalView */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC80D42C504B0E006B3B61 /* JournalView.swift */,
+			);
+			path = JournalView;
+			sourceTree = "<group>";
+		};
+		E19651572C512E5F00AE595D /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC80D62C504B59006B3B61 /* CalendarView.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		E19651582C512EBC00AE595D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC80D22C504AD9006B3B61 /* TabBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E1AAA0782C50073000B21CE4 = {
 			isa = PBXGroup;
 			children = (
@@ -61,13 +105,9 @@
 		E1AAA0832C50073000B21CE4 /* Scribify */ = {
 			isa = PBXGroup;
 			children = (
+				E19651582C512EBC00AE595D /* Components */,
+				E19651542C512DFD00AE595D /* Scenes */,
 				E1AAA0842C50073000B21CE4 /* ScribifyApp.swift */,
-				E1CC80D02C50448A006B3B61 /* StudentsList.swift */,
-				E1CC80CE2C50445A006B3B61 /* StudentsViewModel.swift */,
-				E1AAA0862C50073000B21CE4 /* StudentsListView.swift */,
-				E1CC80D22C504AD9006B3B61 /* TabBar.swift */,
-				E1CC80D42C504B0E006B3B61 /* JournalView.swift */,
-				E1CC80D62C504B59006B3B61 /* CalendarView.swift */,
 				E1AAA0882C50073200B21CE4 /* Assets.xcassets */,
 				E1AAA08A2C50073200B21CE4 /* Preview Content */,
 			);
