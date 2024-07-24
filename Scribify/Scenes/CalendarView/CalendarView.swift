@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct CalendarView: View {
+    
+    @State var selectedDate: Date = Date()
+    
+    @ObservedObject var vm: CalendarViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            DatePicker("Date", selection: $selectedDate)
+                .datePickerStyle(.graphical)
+            Text("Nadchodzące wydarzenia:")
+            Divider()
+        }
+        Spacer()
+        HStack {
+            
+        }
+
+
+        
     }
 }
 
 #Preview {
-    CalendarView()
+    CalendarView(vm: CalendarViewModel(title: ""))
 }

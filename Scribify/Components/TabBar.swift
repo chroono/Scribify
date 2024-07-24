@@ -25,7 +25,7 @@ struct TabBar: View {
                 }
           
             
-            CalendarView()
+            CalendarView(vm: CalendarViewModel(title: ""))
                 .tabItem {
                     Button("Calendar", systemImage: "calendar") {
                         
