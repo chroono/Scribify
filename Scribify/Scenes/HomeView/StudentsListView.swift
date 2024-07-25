@@ -10,15 +10,20 @@ import SwiftUI
 struct StudentsListView: View {
     
     @State var student = students
+    
     @ObservedObject var vm: StudentsViewModel
     
     var body: some View {
-        List(students) { students in
-            Text(students.username)
-            
+        NavigationStack {
+            List(student) { student in
+                NavigationLink(value: student) {
+                    Text(student.surname)
+                }
+            }
+            .navigationDestination(for: Students.self) { student in
+                JournalView(student: [student], vm: JournalViewModel(title: "", mark: "", avarageGrade: ""))
+            }
         }
-        
-        
     }
 }
 
