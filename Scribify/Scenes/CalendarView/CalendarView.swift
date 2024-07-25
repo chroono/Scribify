@@ -9,23 +9,54 @@ import SwiftUI
 
 struct CalendarView: View {
     
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }
+    
     @State var selectedDate: Date = Date()
+    @State var showAlert: Bool = false
+    @State var title: String = ""
     
     @ObservedObject var vm: CalendarViewModel
     
     var body: some View {
-        VStack {
-            DatePicker("Date", selection: $selectedDate)
-                .datePickerStyle(.graphical)
-            Text("Nadchodzące wydarzenia:")
-            Divider()
-        }
-        Spacer()
-        HStack {
-            
-        }
+        NavigationStack{
+            VStack {
+                DatePicker("Date", selection: $selectedDate)
+                    .datePickerStyle(.graphical)
+                Divider()
+                Text("Nadchodzące wydarzenia:")
+                
+            }
+            Spacer()
+            HStack {
+                Text("")
+                Spacer()
+                Text(selectedDate, formatter: dateFormatter)
+            }
 
-
+            .navigationTitle("Kalendarz")
+            .toolbar(content: {
+                ToolbarItem {
+                    Button("", systemImage: "plus") {
+                        showAlert = true
+                        
+                    }
+                }
+            })
+        }
+        .alert("Dodaj wydarzenie", isPresented: $showAlert) {
+            TextField("Dodaj nazwę wydarzenia",text: $title)
+            Button("Cofnij") {
+                
+            }
+            Button("Dodaj") {
+                
+            }
+        }
         
     }
 }

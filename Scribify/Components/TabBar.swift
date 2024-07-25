@@ -23,19 +23,17 @@ struct TabBar: View {
                         
                     }
                 }
-          
             
             CalendarView(vm: CalendarViewModel(title: ""))
                 .tabItem {
                     Button("Calendar", systemImage: "calendar") {
                         
                     }
-                    // calendar
                 }
         }
     }
+    
 }
-
 #Preview {
     TabBar()
 }
