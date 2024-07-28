@@ -19,6 +19,7 @@ struct CalendarView: View {
     @State var selectedDate: Date = Date()
     @State var showAlert: Bool = false
     @State var title: String = ""
+    @State var eventsArray: [String] = []
     
     @ObservedObject var vm: CalendarViewModel
     
@@ -32,12 +33,22 @@ struct CalendarView: View {
                 
             }
             Spacer()
-            HStack {
-                Text("")
-                Spacer()
-                Text(selectedDate, formatter: dateFormatter)
+            
+            List(eventsArray, id: \.self) {_ in
+                HStack {
+                    Text(title)
+                    Spacer()
+                    Text(selectedDate, formatter: dateFormatter)
+                        .swipeActions {
+                            Button("Delete", role: .destructive) {
+                                
+                            }
+                            
+                        }
+                }
+                
             }
-
+            
             .navigationTitle("Kalendarz")
             .toolbar(content: {
                 ToolbarItem {
@@ -54,12 +65,20 @@ struct CalendarView: View {
                 
             }
             Button("Dodaj") {
-                
+                addEvents()
             }
         }
         
+        
     }
+    
+    func addEvents() {
+        eventsArray.append(title)
+    }
+    
 }
+
+
 
 #Preview {
     CalendarView(vm: CalendarViewModel(title: ""))
