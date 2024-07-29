@@ -19,14 +19,14 @@ struct JournalView: View {
             VStack {
                 
             }
-        }
-        .navigationTitle("\(student)")
-        .toolbar {
-            ToolbarItem {
-                Button("", systemImage: "plus") {
-                    showAlert = true
-                }
-            }
+            .navigationTitle("\(student)")
+            .toolbar {
+                ToolbarItem {
+                    Button("", systemImage: "plus") {
+                        showAlert = true
+                    }
+                }        }
+            
         }
         .alert("Dodaj ocenę", isPresented: $showAlert) {
             TextField("Dodaj ocenę", text: $mark)
@@ -36,9 +36,9 @@ struct JournalView: View {
             Button("Dodaj") {
                 
             }
-         }
+        }
     }
-       
+    
 }
 
 #Preview {
