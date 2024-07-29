@@ -13,11 +13,22 @@ struct JournalView: View {
     @ObservedObject var vm: JournalViewModel
     @State var showAlert: Bool = false
     @State var mark: String = ""
+    @State var events:String = ""
+    @State var eventArray: [String] = []
     
     var body: some View {
         NavigationStack {
-            VStack {
-                
+            List(eventArray, id: \.self){_ in
+                HStack {
+                    Text(events)
+                    Spacer()
+                    Text(mark)
+                        .swipeActions {
+                            Button("Delete", role: .destructive) {
+                                
+                            }
+                        }
+                }
             }
             .navigationTitle("\(student)")
             .toolbar {
@@ -29,14 +40,18 @@ struct JournalView: View {
             
         }
         .alert("Dodaj ocenę", isPresented: $showAlert) {
+            TextField("Dodaj wydarzenie", text: $events)
             TextField("Dodaj ocenę", text: $mark)
             Button("Cofnij"){
                 
             }
             Button("Dodaj") {
-                
+                addEvents()
             }
         }
+    }
+    func addEvents() {
+        eventArray.append(events)
     }
     
 }
